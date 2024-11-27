@@ -1,0 +1,3 @@
+PROJECT_NAME = "TrashTrask API"
+API_V1_STR = "/api/v1"
+DATABASE_URL=""

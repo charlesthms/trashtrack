@@ -1,0 +1,82 @@
+# Python-related
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.env
+*.venv
+env/
+venv/
+ENV/
+Pipfile
+Pipfile.lock
+
+# Docker-related
+*.log
+*.pid
+*.swp
+*.seed
+*.backup
+docker-compose.override.yml
+.env
+.dockerignore
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# FastAPI/Starlette files (e.g., caching, sessions)
+instance/
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+
+# Node.js (if any frontend is involved later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# macOS-specific files
+.DS_Store
+
+# Logs and other temporary files
+logs/
+*.log
+tmp/
+*.tmp
+*.temp
+*.bak
+
+# Coverage files
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Test and test output
+unit_test.log
+junit*.xml
+test-results/
+
+# Ignore backend Docker volume mounts
+app/backend/tmp/
+**/__pycache__/

@@ -1,21 +1,25 @@
-# Use a base image with Python 3.12
+# Use a base image with Python 3.8
 FROM python:3.8
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy requirements.txt into the container
+# Copy the requirements.txt into the container
 COPY requirements.txt .
 
-# Install dependencies
+# Install dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the backend code into the container
-COPY app/backend/ .
+COPY app/backend/ /app/backend/
 
-# Expose the FastAPI default port (8000)
+# Copy the frontend code (Streamlit) into the container
+COPY app/frontend/ /app/frontend/
+
+# Expose ports for both FastAPI (8000) and Streamlit (8501)
 EXPOSE 8000
+EXPOSE 8501
 
-# Command to run FastAPI with uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Default command to run FastAPI (Backend)
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
