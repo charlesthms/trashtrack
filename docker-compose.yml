@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app/backend:/app  # Mounts the local backend code
+    environment:
+      - ENVIRONMENT=development  # Optional: Add environment variables
+      - RELOAD=True  # Enable auto-reload for FastAPI
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
